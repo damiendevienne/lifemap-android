@@ -727,18 +727,18 @@ ul.share-buttons img{
 				CreatePopUps();
 			})
 
-/*
+
 			map.on("click", function() {
 				$("#searchinput").blur();
 				$("#searchinput2").blur();
 				$("#searchinput3").blur();
 				//we also decide to toggle route information with a simple click. 
-				if (map.hasLayer(polyline)) {
-						$("#route-top").toggle();
-						$("#route-bottom").toggle();
-						//and also the itinerary button;						
-						$("#route").toggle();
-						$("#logohelp").toggle();
+				if (whichpage===1) {
+					$("#route-top").toggle();
+					if (map.hasLayer(polyline))	$("#route-bottom").toggle();
+						//and also the itinerary button;				
+					$("#route").toggle();
+					$("#logohelp").toggle();
 				}
 				else {
 					$("#mainsearch").toggle();
@@ -747,7 +747,7 @@ ul.share-buttons img{
 				}
 
 			})
-			*/
+			
 			var SPfocus = L.marker([0,0]);
 			var pointA = new L.LatLng(0,0);
 			var pointB = new L.LatLng(1,1);
@@ -787,9 +787,10 @@ ul.share-buttons img{
 		</script>
 		<!--INTERACTION (DIV SHOW/HIDE, FOCUS ON SE ETC.)-->
 		<script>
-			var whichpage;
+			var whichpage = 0;
 
 			$("#route").click(function(){
+				whichpage = 1;
 				$("#route-top").show();
 //				$("#route-suggestions").show();	
 				$("#mainsearch").hide();		
@@ -801,6 +802,8 @@ ul.share-buttons img{
 //				$("#route-suggestions").hide();	
 				$("#route-bottom").hide();
 				$("#mainsearch").show();
+				whichpage = 0;
+
 				map.removeLayer(markersRoute);
 				map.removeLayer(polyline);
 				//and we also clear the to and from variables
@@ -886,7 +889,6 @@ ul.share-buttons img{
 
 			})
 			function closetheswiper(x) {
-				console.log("blam");
 	      		$("#theMenu").modal("toggle");
 	      		$(x).parents('div').hide();
 
@@ -1308,15 +1310,10 @@ ul.share-buttons img{
 				//get infos
 				taxidFrom = taxidFrom.replace(/\s+/g, '');
 				taxidTo = taxidTo.replace(/\s+/g, '');
-				console.log(taxidFrom);
-				console.log(taxidTo);				
 				var url = 'http://umr5558-treezoom.univ-lyon1.fr:8983/solr/addi/select?q=*:*&fq=taxid:('+taxidFrom+' '+taxidTo+')&wt=json';
 				$.ajax({
 				    url : url,
 				    success : function(data) {
-				    	console.log("oui");
-				    	console.log(taxidFrom);
-						console.log(taxidTo);	
 					    var res = data.response.docs;
 						var asc1 = res[0].ascend;
 						asc1 = [parseInt(res[0].taxid)].concat(asc1);
@@ -1334,16 +1331,11 @@ ul.share-buttons img{
 						}
 						var mrca = getMrca(asc1,asc2);
 						routeq = route.toString().replace(/,/g,' ');
-						console.log("routeq");
-						console.log(routeq);
 						url2 = 'http://umr5558-treezoom.univ-lyon1.fr:8983/solr/taxo/select?q=*:*&fq=taxid:(' + routeq + ')&wt=json&rows=10000';
 
 						$.ajax({
 						    url : url2,
 						    success: function(data2) {
-    				    	console.log("oui2");
-    				    	console.log(taxidFrom);
-							console.log(taxidTo);	
 							map.removeLayer(markersRoute);
 							map.removeLayer(polyline);
 							$("#details-content").empty();
@@ -1464,7 +1456,6 @@ ul.share-buttons img{
 			taxi = taxid;
 			spna = spname;
 			comna = comname;
-			console.log(rank);
 			$('#modaltitle').empty();
 			$('#modalbody-text').empty();	
 			$('#modalbody-pict').empty();
