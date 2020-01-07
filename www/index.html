@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, target-densitydpi=medium-dpi, user-scalable=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<title>Lifemap</title>
 
@@ -28,6 +28,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
+
 		//can we add here a small code that will try to connect to the server and return a message if it didn(t work? We'll try
 		function testCon() {
 			$.ajax({url: "http://lifemap.univ-lyon1.fr",
@@ -697,6 +698,7 @@ ul.share-buttons img{
 		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
 
 
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery-1.12.3.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -717,8 +719,8 @@ ul.share-buttons img{
 		</script>
 		<script>
 			var map = L.map('map', {zoomControl: false, attributionControl: false});
-			var tolUrl='http://lifemap.univ-lyon1.fr/osm_tiles/{z}/{x}/{y}.png';
-			var tol = new L.TileLayer(tolUrl, {minZoom: 2, maxZoom: 42, detectRetina:true});
+			var tolUrl='http://lifemap.univ-lyon1.fr/retina_tiles/{z}/{x}/{y}.png';
+			var tol = new L.TileLayer(tolUrl, {minZoom: 2, maxZoom: 42, detectRetina:false});
 			map.addLayer(tol);
 			map.setView([-5,0], 4);
 
