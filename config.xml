@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.univ_lyon1.lifemapcom" ios-CFBundleVersion="1.0.0" version="1.2.0">
+<widget id="fr.univ_lyon1.lifemapcom" ios-CFBundleVersion="1.0.0" version="1.2.1">
     <name>Lifemap</name>
     <description>
 	Lifemap is a tool to explore the tree of life in an interactive manner, similar to the explotation of geographic maps. The tree displayed is a simplification of the taxonomy provided by the NCBI. The tree contains around 800,000 species. Each node (incl. species) in the tree can be clicked to get information and pictures retrieved from Wikipedia. It is also possible to compute and visualize the "route" between two taxa or clades in the tree. 
