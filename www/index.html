@@ -19,6 +19,7 @@
 		<!-- SWIPeR --> 
 		<link rel="stylesheet" href="css/swiper.min.css">
  		<script src="js/swiper.min.js"></script>
+ 		<script type="text/javascript" src="cordova.js"></script>
 
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -28,6 +29,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
+
+//		document.addEventListener("deviceready", onDeviceReady, false);
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
 
 		//can we add here a small code that will try to connect to the server and return a message if it didn(t work? We'll try
 		function testCon() {
@@ -55,6 +61,20 @@
 			//we add elements to "loading" to explain that there was a problem
 			$('#lostconnect').modal("toggle");
 		}
+	    function onDeviceReady() {
+	    	testCon();
+	    	flyvalue = window.localStorage.getItem("fly")
+			if ( flyvalue=== null) {
+				window.localStorage.setItem("fly", "false")
+			}
+			if ( flyvalue=== "true") { //la case était coché en quittant l"appli la dernière fois
+				$("#ChoiceExplo").find('i').toggleClass('fa-square-o fa-check-square-o')
+			}
+			//IL FAUT LA COCHER
+	    }
+
+
+
 		</script>
 		<style>
 			body,html {
@@ -322,7 +342,7 @@ ul.share-buttons img{
 		</style>
 		<!--PHONE SPECIFIC FUNCTIONS-->
 	</head>
-	<body onload="testCon()" style="background:black;">
+	<body onload="onLoad()" style="background:black;">
 
 
 
@@ -616,7 +636,7 @@ ul.share-buttons img{
 							<div class='col-xs-2' id="ChoiceExplo"><i class='fa fa-square-o fa-lg fa-fw'></i></div>
 							<div class='col-xs-10'>"Fly" to new locations</div>
 						</div>
-						<div class='row' style='color:grey; font-size: 10px; padding: 10px;'>When checked, zooming to new locations after a search in the search bar will be done by "FLYING"</div>
+						<div class='row' style='color:grey; font-size: 10px; padding: 10px;'>When checked, zooming to new locations after a search in the search bar will be done by "GGGGGGGG"</div>
 					</div>
 					<div class="modal-footer" style='text-align:center; border-top: 0px;'>
 				        <button type="button" class="btn btn-default" data-dismiss="modal" style='font-size:16px;'>Close</button>
@@ -715,6 +735,13 @@ ul.share-buttons img{
 			$('#ChoiceExplo').click(function(){
 				$(this).find('i').toggleClass('fa-square-o fa-check-square-o')
 				str = $(this).find('i').attr('class');
+				if (str.match("fa-check-square-o")===null) {
+					window.localStorage.setItem("fly", "false")
+				}
+				else 
+				{
+					window.localStorage.setItem("fly", "true")
+				}
 		});
 		</script>
 		<script>
