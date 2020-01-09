@@ -3,10 +3,9 @@
 	<head>
 		<meta charset="utf-8">
  		<meta http-equiv="X-UA-Compatible" content="IE=edge">		
-<!-- 		<meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+ 		<meta http-equiv="Content-Security-Policy">
+<!-- 		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
  -->
-		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, target-densitydpi=medium-dpi, user-scalable=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<title>Lifemap</title>
@@ -33,17 +32,13 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
-
-	alert("oiuiouiouio")
 //		document.addEventListener("deviceready", onDeviceReady, false);
 		function onLoad() {
-			alert("ici ok")
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
 
 		//can we add here a small code that will try to connect to the server and return a message if it didn(t work? We'll try
 		function testCon() {
-			alert("Dans testCon")
 			$.ajax({url: "http://lifemap.univ-lyon1.fr",
 				type: "HEAD",
 				timeout:3000,
@@ -494,7 +489,7 @@ ul.share-buttons img{
 		<div id="mainsearch" class="container-fluid" style="position: absolute; right:0px; left:0px; top:20px; background:transparent; margin: 10px 10px 0px 10px; padding:0px; z-index:10;">
 			<div class="btn-group" style="width:100%;">
 				<span id="sandwich" class="glyphicon glyphicon-menu-hamburger"></span>
-				<input id="searchinput" type="search" class="form-control" style=" height:50px;" placeholder="SEARCH species, clades, ...">
+				<input id="searchinput" type="search" class="form-control" style=" height:50px;" placeholder="Search species, clades, ...">
 				<span id="searchclear" class="glyphicon glyphicon-remove"></span>
 			</div>
 		</div>

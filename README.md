@@ -1,20 +1,29 @@
 # lifemap_mobile_Phonegap
 
-This is the folder used to create the Lifemap app for android and ios with CORDOVA. 
+This is the folder used to create the Lifemap app for android with cordova.
 
-cordova-icon and cordova-splash must be installed first.
+
+CURRENT VERSION : cordova 9 and android 8
+
+cordova-icon and cordova-splash must be installed first. --> check
+
 
 To create the App for android, type:
 
-`>cordova platform add android`
+`>cordova platform add android@8.X.X`
+`>cordova plugin add cordova-plugin-splash`
+`>cordova plugin add cordova-plugin-whitelist`
 
-`>cordova-icon`
+`>cordova-icon` -> to generate icons
+`>cordova-splash` -> to generate splashscreens
 
-`>cordova-splash`
+`>cordova build` -> for building, or
 
-`>cordova build`
+Then edit /platforms/android/app/src/main/AndroidManifest.xml 
+and add android:usesCleartextTraffic="true" in the <application ... /> part.
 
-
+`cordova run android --release -- --keystore=KEYSTOREFILELOCATION --storePassword=XXXXXX --alias=ALIAS --password=XXXXXX`
+(replace by correct values)
 
 # to emulate android phone on linux
 

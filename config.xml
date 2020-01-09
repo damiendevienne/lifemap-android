@@ -20,6 +20,8 @@
     <allow-navigation href="http://umr5558-treezoom/*" />
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <platform name="android">
+        <preference name="AutoHideSplashScreen" value="true" />
+        <preference name="ShowSplashScreen" value="false" />
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
