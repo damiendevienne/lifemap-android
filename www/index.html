@@ -34,8 +34,35 @@
 		<script>
 //		document.addEventListener("deviceready", onDeviceReady, false);
 		function onLoad() {
+			console.log(navigator.language)
+			if (navigator.language==="fr-FR") {
+				SwitchToFR()
+			}
 			document.addEventListener("deviceready", onDeviceReady, false);
 		}
+		function SwitchToFR() {
+				$("#searchinput").attr('placeholder', 'Chercher une espèce, un clade, ...');
+				$("#gototuto").html('Tutoriel');
+				$("#thetol").html("L'arbre du vivant")
+				$("#about").html("À propos")
+				$("#contact").html("Contact")
+				$("#share").html("Partager")
+				$("#flybutton").html('"Voler" dans l\'arbre')
+				$("#flytext").html("Si cette case est cochée, le déplacement dans l'arbre après une recherche se fait par une animation.")
+				$("#langchosen").html('Langue : FR')
+		}
+		function SwitchToEN() {
+				$("#searchinput").attr('placeholder', 'Search species, clades, ...');
+				$("#gototuto").html('Tutorial');
+				$("#thetol").html("The Tree of Life")
+				$("#about").html("About")
+				$("#contact").html("Contact")
+				$("#share").html("Share")
+				$("#flybutton").html('"Fly" to new locations')
+				$("#flytext").html('When checked, zooming to new locations after a search in the search bar will be done by a smooth animation')
+				$("#langchosen").html('Langage : EN')
+		}
+
 
 		//can we add here a small code that will try to connect to the server and return a message if it didn(t work? We'll try
 		function testCon() {
@@ -73,6 +100,7 @@
 				$("#ChoiceExplo").find('i').toggleClass('fa-square-o fa-check-square-o')
 			}
 			//IL FAUT LA COCHER
+			//GESTION DE LA LANGUE
 	    }
 
 
@@ -463,7 +491,7 @@ ul.share-buttons img{
             	<div class="swiper-zoom-container">                    
                     <img src="img/back.png" opacity=1;>
 					<div style="position:absolute; width:auto; height:auto; z-index:15000; color: white; font-size: 10pt;">
-					Please, share <b>Lifemap</b> with your contacts! <br> <br>
+						<br> <br>
 						<ul class="share-buttons">
 						  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&t=Lifemap%20-%20Explore%20the%20entire%20Tree%20of%20Life%20on%20your%20mobile!" title="Share on Facebook" target="_blank"><img alt="Share on Facebook" src="img/Facebook.svg" style="width:64px; height:64px;"></a></li>
 						  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&text=Lifemap%20-%20Explore%20the%20entire%20Tree%20of%20Life%20on%20your%20mobile!:%20http%3A%2F%2Flifemap.univ-lyon1.fr%2Fmobile.index.html&via=lifemap_tol" target="_blank" title="Tweet"><img alt="Tweet" src="img/Twitter.svg" style="width:64px; height:64px;"></a></li>
@@ -630,15 +658,19 @@ ul.share-buttons img{
 							<div id="contact" class='col-xs-10 men'>Contact</div>
 						</div> 
 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class='fa fa-share fa-lg fa-fw'></i></div>
+							<div class='col-xs-2'><i class='fa fa-share-alt fa-lg fa-fw'></i></div>
 							<div id="share" class='col-xs-10 men'>Share</div>
+						</div>
+						<div class='row menuentry'>
+							<div class='col-xs-2'><i class='fa fa-flag fa-lg fa-fw'></i></div>
+							<div id="langchosen" class='col-xs-10 men'>Langage : EN</div>
 						</div>
 						<div class="row">&nbsp;</div>
 						<div class='row'>
 							<div class='col-xs-2' id="ChoiceExplo"><i class='fa fa-square-o fa-lg fa-fw'></i></div>
-							<div class='col-xs-10'>"Fly" to new locations</div>
+							<div id="flybutton" class='col-xs-10'>"Fly" to new locations</div>
 						</div>
-						<div class='row' style='color:grey; font-size: 10px; padding: 10px;'>When checked, zooming to new locations after a search in the search bar will be done by "flying"</div>
+						<div id="flytext" class='row' style='color:grey; font-size: 10px; padding: 10px;'>When checked, zooming to new locations after a search in the search bar will be done by "flying"</div>
 					</div>
 					<div class="modal-footer" style='text-align:center; border-top: 0px;'>
 				        <button type="button" class="btn btn-default" data-dismiss="modal" style='font-size:16px;'>Close</button>

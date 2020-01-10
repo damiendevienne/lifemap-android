@@ -21,7 +21,8 @@
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <platform name="android">
         <preference name="AutoHideSplashScreen" value="true" />
-        <preference name="ShowSplashScreen" value="false" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="FadeSplashScreen" value="true"/>
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
