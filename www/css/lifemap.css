@@ -51,10 +51,27 @@ body,html {
 }
 .papernote {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding:10px;
+	padding:40px;
 	margin-top:15px;
 	margin-bottom:15px;				
+	color: #b4c3e0;
 }
+.papernote a {
+	color: #b4c3e0;
+}
+.titlerow {
+	padding-bottom: 5px;
+	font-weight: bold;
+}
+.selectedlang {
+	/* style for the selected language*/
+    text-decoration: underline;
+}
+.langchoicemodal {
+	font-variant: small-caps;
+	color:#434343;
+}
+
 p {
 	margin-bottom:0px;
 }
@@ -107,20 +124,33 @@ span.sciname {
 	color: #505050;
 	font-size:16px;
 }
+span.sciname b {
+	font-weight: bolder;
+	color:#272727;
+}
+
 span.scinameItalic {
 	font-style: italic;
 	font-size:16px;
 	color: #505050 ;	
 }
+span.scinameItalic b {
+	font-weight: bolder;
+	color:#272727;
+}
+
 span.commonname {
 	color: #505050 ;
-	font-size:16px;	
+	font-size:13px;	
 }
 span.rank {
 	text-transform: uppercase;
 	font-weight: bolder;
 	font-size:x-small;
 	color: #989898 ;	
+}
+.ui-widget-content a {
+    text-decoration: none;
 }
 .ui-autocomplete {
 	background:white;
@@ -166,7 +196,7 @@ span.rank {
 }
 .swiper-pagination-bullet-active {
 	opacity: 1;
-	background: #007aff;
+	background: #abb9d5;
 }
 a {
 	color:white;

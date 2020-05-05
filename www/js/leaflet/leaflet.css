@@ -16,8 +16,6 @@
 	}
 .leaflet-container {
 	overflow: hidden;
-    background: #000000;
-    outline: 0;
 	}
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -252,7 +250,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* visual tweaks */
 
 .leaflet-container {
-	background: #ddd;
+	background: #000000;
 	outline: 0;
 	}
 .leaflet-container a {
