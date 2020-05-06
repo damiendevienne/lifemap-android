@@ -24,6 +24,7 @@ function SwitchInterfaceToFR() {
 	$("#share").html("Partager")
 	$("#flybutton").html('"Voler" dans l\'arbre')
 	$("#flytext").html("Si cette case est cochée, le déplacement dans l'arbre après une recherche se fait par une animation.")
+	$("#favorites").html('Mes favoris')
 	$("#settings").html('Paramètres')
 	$("#langs").html('Langue')
 	//menu de choix des langues
@@ -49,10 +50,9 @@ function SwitchInterfaceToFR() {
 	//Tuto text
 	$("#tuto-page1").html("<b>Lifemap</b> est un outil interactif pour explorer l'arbre du vivant. Le concept utilisé dans <b>Lifemap</b> est simple : l'explorations se fait en zoomant dans l'arbre comme sur une carte géographique.</p>");
 	$("#tuto-page2").html("<br><br>La version actuelle de l'arbre contient environ 1,8 million d'espèces. Elle est basée sur la taxonomie publiée par le <a href='https://www.ncbi.nlm.nih.gov'>NCBI</a>. Cette taxonomie est mise à jour régulièrement.</p>")
-	$("#tuto-page3").html("Tous les noeuds dans l'arbre sont cliquables. Ceci donne accès à des informations (description et photo) provenant de <i class='fa fa-wikipedia-w'></i>ikipedia. <br>Des \"trajets\" dans l'arbre peuvent être affichés en cliquant sur la flèche (<i class='fa fa-level-up'></i>) dans le coin en bas à droite et en indiquent le nom d'une espèce de départ et d'une espèce d'arrivée. Ceci permet d'identifier facilement l'ancêtre commun le plus récent (MRCA) entre deux lignées.</p>")
+	$("#tuto-page3").html("Tous les noeuds dans l'arbre sont cliquables. Ceci donne accès à des informations (description et photo) provenant de <i class='fa fa-wikipedia-w'></i>ikipedia. <br>Des \"trajets\" dans l'arbre peuvent être affichés en cliquant sur la flèche (<i class='fa fa-level-up'></i>) dans le coin en bas à droite et en indiquant le nom d'une espèce de départ et d'une espèce d'arrivée. Ceci permet d'identifier facilement l'ancêtre commun le plus récent (MRCA) entre deux lignées.</p>")
 	$("#tuto-page4").html("Lifemap a été écrit et est maintenu par Damien de Vienne. Les serveurs hébergeant Lifemap sont fournis par le Laboratoire de Biométrie et Biologie Évolutive. Le soutien technique concernant ces serveurs est assuré par Bruno Spataro et Stephane Delmotte.<br><br>")
 	$("#tuto-page5").html("<span xmlns:dct='http://purl.org/dc/terms/'' property='dct:title'>Lifemap</span> est sous sous licence CC-BY-NC :<br><a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/'>Creative Commons Attribution-NonCommercial 4.0 International License</a>.")
-
 }
 function SwitchInterfaceToEN() {
 	//barres de recherche
@@ -67,6 +67,7 @@ function SwitchInterfaceToEN() {
 	$("#share").html("Share")
 	$("#flybutton").html('"Fly" to new locations')
 	$("#flytext").html('When checked, zooming to new locations after a search in the search bar will be done by a smooth animation')
+	$("#favorites").html('My favorites')
 	$("#settings").html('Settings')
 	$("#langs").html('Language')
 	//menu de choix des langues

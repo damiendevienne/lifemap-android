@@ -104,9 +104,21 @@
 	      		$("#langchoice").modal("toggle");
 			})
 
+			$("#favoritesclick").click(function() {
+				var isvisible = document.getElementById("favoritesdiv");
+				var caretstate = document.getElementById("caretdown1"); 
+				if (isvisible.style.display === "none") {
+						isvisible.style.display = "block";
+						caretstate.className = "fa fa-caret-up fa-sm fa-fw"; 
+				  } else {
+					    isvisible.style.display = "none";
+						caretstate.className = "fa fa-caret-down fa-sm fa-fw"; 
+				  }
+			})
+
 			$("#settingsclick").click(function() {
 				var isvisible = document.getElementById("settingsdiv");
-				var caretstate = document.getElementById("caretdown"); 
+				var caretstate = document.getElementById("caretdown2"); 
 				if (isvisible.style.display === "none") {
 						isvisible.style.display = "block";
 						caretstate.className = "fa fa-caret-up fa-sm fa-fw"; 

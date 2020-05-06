@@ -15,7 +15,7 @@
    viewBox="0 0 744.09448819 1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="splashscreen.svg">
   <defs
      id="defs4">
@@ -334,16 +334,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.81347656"
-     inkscape:cx="439.82337"
-     inkscape:cy="696.06012"
+     inkscape:zoom="1.6269531"
+     inkscape:cx="464.83568"
+     inkscape:cy="752.80977"
      inkscape:document-units="px"
-     inkscape:current-layer="g4779"
+     inkscape:current-layer="g4738"
      showgrid="false"
-     inkscape:window-width="1321"
-     inkscape:window-height="744"
-     inkscape:window-x="45"
-     inkscape:window-y="24"
+     inkscape:window-width="2493"
+     inkscape:window-height="1385"
+     inkscape:window-x="1433"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -353,7 +353,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -466,16 +466,15 @@
         </g>
         <text
            xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:14.31318569px;line-height:125%;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="font-style:normal;font-weight:normal;line-height:0%;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            x="289.0509"
            y="348.56555"
-           id="text4755"
-           sodipodi:linespacing="125%"><tspan
+           id="text4755"><tspan
              sodipodi:role="line"
              id="tspan4757"
              x="289.0509"
              y="348.56555"
-             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-family:'Sinkin Sans';-inkscape-font-specification:'Sinkin Sans Light';letter-spacing:2px;fill:#ffffff">Lifemap</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:14.31318569px;line-height:1.25;font-family:'Sinkin Sans';-inkscape-font-specification:'Sinkin Sans Light';letter-spacing:2px;fill:#ffffff">Lifemap</tspan></text>
       </g>
     </g>
   </g>
