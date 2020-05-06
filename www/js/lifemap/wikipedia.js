@@ -14,6 +14,10 @@ function getWikiDesc (spname) {
 }
 
 function markofun(taxid, spname,comname, rank) {
+	//STEP 0: WE LOOK WHETHER THE TAXID IS ALREADY PRESENT IN THE LIST OF FAVORITES
+
+
+
 	taxi = taxid;
 	spna = spname;
 	comna = comname;
@@ -21,7 +25,7 @@ function markofun(taxid, spname,comname, rank) {
 	$('#modalbody-text').empty();	
 	$('#modalbody-pict').empty();
 	$('#modalbody-links').empty();	
-	console.log(rank)
+	console.log(spna)
     if ((rank==="species")||(rank===" species ")||(rank===" espèce ")||(rank===" sous-espèce ")) {
 		$('#modaltitle').append("<span class='scinameItalic'>"+spname+"</span>");	
     }

@@ -30,6 +30,12 @@ function onDeviceReady() {
 		langvalues=langvalue.split("+")
 		SwitchLanguage(langvalues[0],langvalues[1],langvalues[2])
 	}
+	favorissauvegarde = window.localStorage.getItem("favoris")
+	if (favorissauvegarde!=="null") {
+		alert(favorissauvegarde)
+		$("#favoritesdiv").html("COUCOU LES COPAINS")
+		alert("done?")
+	}
 	//ADD CONTROL FOR BACK BUTTON
 	document.addEventListener("backbutton", onBackKeyDown, false);
 }

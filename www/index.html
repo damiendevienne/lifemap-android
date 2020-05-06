@@ -83,7 +83,7 @@
  -->
 <!--SWIPER TUTORIAL-->
 	<div id = "tuto" class="swiper-container" hidden>
-        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 20px; right:20px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
             	<div class="swiper-zoom-container">
@@ -139,11 +139,6 @@
         <div class="swiper-pagination"></div>
     </div>
 
-
-
-
-
-
 <!--SWIPER ABOUT-->
 <!-- 	<div id = "aboutswiper" class="swiper-container" hidden>
         <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
@@ -198,7 +193,7 @@
     </div>
  --><!--SWIPER SHARE-->
 	<div id = "shareswiper" class="swiper-container" hidden>
-        <div onclick="closetheswiper(this)" style="position:absolute; top: 10px; right:10px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
+        <div onclick="closetheswiper(this)" style="position:absolute; top: 20px; right:20px; z-index:10; color:white;"><i class="fa fa-times fa-2x" aria-hidden="true"></i></div>
         <div class="swiper-wrapper">
          <div class="swiper-slide">
             	<div class="swiper-zoom-container">                    
@@ -301,7 +296,8 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<div id="modaltitle" class="modal-title"></div>
+						<div class="modal-title"><span id="modaltitle"></span><span id="clickonfavostar" class="favo"><i class="fa fa-star-o unsavedfavo" aria-hidden="true"></i></span></div>
+						<div id="invisibledata" hidden></div> <!-- Used for favorites...--> 
 					</div>
 					<div class="modal-body">
 							<div id="modalbody-text" style="font-size: x-small; padding: 5px"></div>
@@ -356,18 +352,6 @@
 							<div class='col-xs-2'><i class='fa fa-question-circle-o fa-lg fa-fw'></i></div>
 							<div id="gototuto" class='col-xs-10 men'></div>
 						</div> 
-<!-- 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class="fa fa-tree fa-lg fa-fw"></i></div>
-							<div id = "thetol" class='col-xs-10 men'>The Tree of Life</div>
-						</div> --> 
-<!-- 						<div class='row menuentry'>
-							<div class='col-xs-2'><i class='fa fa-info fa-lg fa-fw'></i></div>
-							<div id="about" class='col-xs-10 men'>About</div>
-						</div> 
-						<div class='row menuentry'>
-							<div class='col-xs-2'><i class='fa fa-user fa-lg fa-fw'></i></div>
-							<div id="contact" class='col-xs-10 men'>Contact</div>
-						</div>  -->
 						<div class='row menuentry'>
 							<div class='col-xs-2'><i class='fa fa-share-alt fa-lg fa-fw'></i></div>
 							<div id="share" class='col-xs-10 men'></div>
@@ -380,11 +364,15 @@
 							<div class='col-xs-2'><i class='fa fa-star-o fa-lg fa-fw'></i></div>
 							<div id="favoritesclick" class='col-xs-10 men'><span id="favorites"></span><i id="caretdown1" class="fa fa-caret-down fa-sm fa-fw" style="font-size:15px;"></i></div>
 						</div>
-						<div id="favoritesdiv" style="display: none;">
-							<div class='row menuentry'>
-								<div class="col-xs-2"></div>
-								<div id="myfovarites" class="col-xs-10">
+						<div id="favoritesdiv" style="display: none; text-align:left;">
+							<div class="row vertical-align listfavo">
+								<div class="col-xs-2" style=" padding-right:0px; text-align: right;"><i class="fa fa-map-marker fa-fw savedfavo" style="font-size:15px;"></i></div>
+								<div id="2" onclick="zoomTo(2);" class="col-xs-8">
+									<span class='sciname'>Homo sapiens</span>
+									<span class='commonname'>(Homme moderne, etc...)</span>
+									<span class='rank'>espèce</span>
 								</div>
+								<div class="col-xs-2"><i class="fa fa-trash fa-fw" style="font-size:15px;"></i></div>
 							</div>
 						</div>						
 						<div class='row menuentry'>
@@ -453,62 +441,6 @@
 		</div>
 
 
-
-<!--					
-					<div class="papernote">
-						<p><i class='fa fa-question-circle fa-fw fa-lg' style='color:grey;'></i>&nbsp;<b>Lifemap</b> is an interactive tool to explore the tree of life. The concept used in <b>Lifemap</b> is similar to the one used in cartography with tools like Google Maps© or Open Street Maps: exploring is done by zooming and panning.</p>
-					</div>
-					<div class="papernote">
-						<p><i class='fa fa-info fa-fw  fa-lg' style='color:grey;'></i>&nbsp;The current tree contains 802639 species: 3733 Archaea, 277426 Bacteria and 521480 Eukaryotes. It is based on the taxonomy publised by the NCBI and updated regularly.</p>
-					</div>
-					<div class="papernote">
-						<p><i class='fa fa-hand-pointer-o fa-fw fa-lg' style='color:grey;'></i>&nbsp;All the nodes in the tree are clickable. It displays information (description and picture) concerning the taxa (retrieved from the <i class='fa fa-wikipedia-w'></i>ikipedia page, if any). If you have description or pictures you would like to see in Lifemap, simply create or update the corresponding <i class='fa fa-wikipedia-w'></i>ikipedia page. </p>
-					</div>
-					<div class="papernote">
-						<p><i class='fa fa-level-up fa-fw fa-lg' style='color:grey;'></i>&nbsp;Itineraries between taxa can be computed by clicking on the bottom right button of the main page and filling the two search fields. When filled, the route is drawn between the taxa, the Most Recent Common Ancestor (MRCA) of the two groups/species is returned. The user gets also access to a list of all the nodes that are encountered in the way from one group to the other. This list is clickable.</p>
-					</div>
-					<div class="papernote">
-						<p><i class='fa fa-user fa-fw  fa-lg' style='color:grey;'></i>&nbsp;Lifemap was written by Damien M. de Vienne, a CNRS researcher working in the Laboratory of Biometry and Evolutionary Biology (LBBE) in Lyon (France) with support from the informatics departement (especially Stephane Delmotte and Bruno Spattaro). </p>
-					</div>
-					<p  style="font-size: x-small; text-align: center;"><i>For any question, remark, suggestion, or bug report, please contact Damien de Vienne: damien.de-vienne@univ-lyon1.fr</i></p>
-					<div class="modal-footer">					
-				        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
--->
-<!-- 
-		<div id="AboutModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		      </div>
-		      <div class="modal-body">
-				<div class="row">
-			  <div class="col-xs-4">
-			    <img src="img/ddv.png" width="100%">
-			    <p style="font-size:6pt;text-align:center;">© Barbara Portailler</p>
-			  </div>
-			  <div class="col-xs-8">
-			    <div>
-			    <b>Lifemap was created by Damien M. de Vienne</b>, a CNRS researcher working at the Biometry and Evolutionary Biology Laboratory (<a href="http://lbbe.univ-lyon1.fr">LBBE</a>) in Lyon (France). He developed Lifemap with the technical support of the Informatics Pole of the laboratory, in particular Stéphane Delmotte and Bruno Spataro. 
-			    </div>
-			    <div style="padding-top: 10px; text-align: center; font-size:8pt;">
-					For suggestions ,comments, etc: <a href="mailto:damien.de-vienne@univ-lyon1.fr"><i class='fa fa-envelope fa-fw fa-lg'></i></a>
-			    </div>
-			  </div>
-			</div>
-		      </div>
-		      <div class="modal-footer">
-			<div style="text-align:center;">
-			  <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2c/CNRS.svg/200px-CNRS.svg.png" height="40px">
-			  <img src="https://upload.wikimedia.org/wikipedia/fr/7/7d/Logo_lbbe.png" height="40px">
-			</div>
-		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>		
-		  </div>
-		</div>
- -->
 		<div id="ShareModal" class="modal fade" role="dialog">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -525,9 +457,6 @@
 
 		<!-- SCRIPTS -->
 		<!--SCRIPTS RELATED WITH THE PHONE CONNECTION TO INTERNET-->
-
-
-
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="js/jquery-1.12.3.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -561,6 +490,8 @@
 		<script type="text/javascript" src="js/lifemap/treefunctions.js"></script>
 		<!--wikipedia related functions-->
 		<script type="text/javascript" src="js/lifemap/wikipedia.js"></script>
+		<!--OPTIONS FOR FAVORITES-->
+ 		<script type="text/javascript" src="js/lifemap/favorites.js"></script>
 		<!--Swiper behavior related functions-->
 		<script type="text/javascript" src="js/lifemap/swiper.js"></script>
 
