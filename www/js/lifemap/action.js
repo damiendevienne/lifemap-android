@@ -4,12 +4,6 @@ Functions that deal with navigation and language switch
 function onLoad() {
 	console.log(navigator.language)
 	//UNCOMMENT WHAT FOLLOWS WHEN THE FR VERSION IS READY. AND TERMINATE THE TRANSLATION (TODO)
-	if (navigator.language==="fr-FR") {
-		SwitchLanguage("int-fr", "tree-fr","wiki-fr")
-	}
-	else {
-		SwitchLanguage("int-en", "tree-en1","wiki-en")
-	}
 	document.addEventListener("deviceready", onDeviceReady, false);
 }
 function onDeviceReady() {	    	
@@ -23,7 +17,7 @@ function onDeviceReady() {
 		$("#ChoiceExplo").find('i').toggleClass('fa-square-o fa-check-square-o')
 	}
 	langvalue = window.localStorage.getItem("lang")
-	if (langvalue=== null) {
+	if (langvalue===null) {
 		if (navigator.language==="fr-FR") {
 			SwitchLanguage("int-fr", "tree-fr","wiki-fr")
 		}
