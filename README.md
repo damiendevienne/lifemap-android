@@ -13,6 +13,7 @@ To create the App for android, type:
 `>cordova platform add android@8.X.X`
 `>cordova plugin add cordova-plugin-splash`
 `>cordova plugin add cordova-plugin-whitelist`
+'>cordova plugin add cordova-plugin-network-information'
 
 `>cordova-icon` -> to generate icons
 `>cordova-splash` -> to generate splashscreens
