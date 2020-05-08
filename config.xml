@@ -4,6 +4,7 @@
     <description>
 	Lifemap is a tool to explore the tree of life in an interactive manner, similar to the explotation of geographic maps. The tree displayed is a simplification of the taxonomy provided by the NCBI. The tree contains around 800,000 species. Each node (incl. species) in the tree can be clicked to get information and pictures retrieved from Wikipedia. It is also possible to compute and visualize the "route" between two taxa or clades in the tree. 
     </description>
+    <splash src="splash.png" />
     <author email="damien.de-vienne@univ-lyon1.fr" href="https://lbbe.univ-lyon1.fr/-de-Vienne-Damien-.html">
         Dr. Damien de Vienne 
     </author>
@@ -21,7 +22,7 @@
     <allow-navigation href="http://umr5558-ncbitreezoom/*" />
     <platform name="android">
         <preference name="AutoHideSplashScreen" value="true" />
-        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="SplashScreenDelay" value="20000" />
         <preference name="FadeSplashScreen" value="true"/>
         <preference name="SplashMaintainAspectRatio" value="true" />
         <preference name="ShowSplashScreenSpinner" value="false" />
