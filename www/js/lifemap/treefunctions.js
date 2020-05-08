@@ -30,8 +30,10 @@ function getRoute(a1, a2) {
     }
 	return res1.concat(res2.reverse());
    }  
+
    var zoomTo = function(taxid) {
 	$("#route-details").hide();
+	$("#theMenu").modal("hide");
  		var url = 'http://'+ServerAddress+'/solr/taxo/select?q=taxid:"'+taxid+'"&wt=json';
 	if (taxid === 1) {
 		if ($('#ChoiceExplo').find('i').attr('class').match("fa-check-square-o")===null) {

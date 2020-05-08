@@ -13,27 +13,30 @@ function getWikiDesc (spname) {
 	});
 }
 
+
 function markofun(taxid, spname,comname, rank) {
-	//STEP 0: WE LOOK WHETHER THE TAXID IS ALREADY PRESENT IN THE LIST OF FAVORITES
+	taxid = taxid.trim();
+	spname = spname.trim();
+	comname = comname.trim();
+	rank = rank.trim()
 
+	//Switch star to active if this node is in favourite already.
+	SetStatusOfFavoStar(taxid)
 
-
-	taxi = taxid;
-	spna = spname;
-	comna = comname;
 	$('#modaltitle').empty();
 	$('#modalbody-text').empty();	
 	$('#modalbody-pict').empty();
 	$('#modalbody-links').empty();	
-	console.log(spna)
-    if ((rank==="species")||(rank===" species ")||(rank===" espèce ")||(rank===" sous-espèce ")) {
-		$('#modaltitle').append("<span class='scinameItalic'>"+spname+"</span>");	
+    if ((rank==="species")||(rank==="subspecies")||(rank==="espèce")||(rank==="sous-espèce")) {
+		$('#modaltitle').append("<span class='scinameItalic'>"+spname+" </span>");	
     }
     else {
-		$('#modaltitle').append("<span class='sciname'>"+spname+"</span>");	
+		$('#modaltitle').append("<span class='sciname'>"+spname+" </span>");	
 	}
-	$('#modaltitle').append("<span class='commonname'>"+comname+"</span>");
-	$('#modaltitle').append("<span class='rank'>"+rank+"</span>");	
+	$('#modaltitle').append("<span class='commonname'>"+comname+" </span>");
+	$('#modaltitle').append("<span class='rank'>"+rank+" </span>");	
+	$("#invisibledata").empty()
+	$("#invisibledata").append([taxid,spname,comname,rank].join("|"));
 	text = "<div style='font-style:center; color:grey;'>"+wikinoarticle+"</div>";
 	pict = "";
 	if (spname!="Root") {
@@ -60,11 +63,11 @@ function markofun(taxid, spname,comname, rank) {
 	}
 	$('#myModal').modal('show');
 	$('#viewfullancestry').on("click", function() {
-		taxidFrom = taxi;
+		taxidFrom = taxid;
 		taxidTo = "1";
 		$("#myModal").modal("hide");
 		$("#mainsearch").hide();					
-		$('#searchinput2').val(spna + comna);
+		$('#searchinput2').val(spname + ' ' + comname);
 		$('#searchinput3').val('Root');
 		$("#route-top").show();
 		mrcaroute();

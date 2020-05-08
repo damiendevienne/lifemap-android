@@ -3,6 +3,10 @@ var wikilang = "null"
 var wikimoreon = "null"
 var wikinoarticle = "null"
 var wikinopicture = "null"
+var addtofavotext = "null"
+var isfavotext = "null"
+// var addedtofavopopup = "null"
+// var removedfromfavopopup = "null"
 
 function SwitchLanguage(inter1,tree1, wiki1) {
 	$("#"+inter1).click();
@@ -11,11 +15,15 @@ function SwitchLanguage(inter1,tree1, wiki1) {
 }
 
 function SwitchInterfaceToFR() {
+	//connection
+	$("#connectionerror").html("pas de connection internet")
+	// //popup favo
+	// addedtofavopopup = "a été ajouté à vos favoris"
+	// removedfromfavopopup = "a été retiré de vos favoris"
 	//barres de recherche
 	$("#searchinput").attr('placeholder', 'Chercher une espèce, un clade, ...');
 	$("#searchinput2").attr('placeholder', 'Espèce ou clade de départ...');
 	$("#searchinput3").attr('placeholder', "Espèce ou clade d'arrivée...");
-
 	//menu de gauche
 	$("#gototuto").html('À propos');
 	$("#thetol").html("L'arbre du vivant")
@@ -24,6 +32,7 @@ function SwitchInterfaceToFR() {
 	$("#share").html("Partager")
 	$("#flybutton").html('"Voler" dans l\'arbre')
 	$("#flytext").html("Si cette case est cochée, le déplacement dans l'arbre après une recherche se fait par une animation.")
+	$("#messagenofavorite").html("Pas encore de favoris. Cliquez sur <span class='label label-default'><i class='fa fa-star' style='font-size:inherit;'></i> Ajouter aux favoris</span> dans les pages de description des espèces.")
 	$("#favorites").html('Mes favoris')
 	$("#settings").html('Paramètres')
 	$("#langs").html('Langue')
@@ -44,17 +53,27 @@ function SwitchInterfaceToFR() {
 	wikimoreon = "lire la suite sur "
 	wikinoarticle = "Pas d'article concernant ce groupe dans <i class='fa fa-wikipedia-w'></i>ikipedia."
 	wikinopicture = "Pas de photo associée dans <i class='fa fa-wikipedia-w'></i>ikipedia."
+	addtofavotext = "Ajouter aux favoris"
+	isfavotext = "Favori"
+
+		//share
+	$(".twitter-follow-button").attr("data-lang","fr") //NOT WORKING
 	//button-names
 	$("#closelangchoice, #closemodalwikidescription, #closedetails2, #BigLeftMenu").html("Fermer")
 	$("#viewfullancestry").html("Voir tout le lignage")
 	//Tuto text
-	$("#tuto-page1").html("<b>Lifemap</b> est un outil interactif pour explorer l'arbre du vivant. Le concept utilisé dans <b>Lifemap</b> est simple : l'explorations se fait en zoomant dans l'arbre comme sur une carte géographique.</p>");
-	$("#tuto-page2").html("<br><br>La version actuelle de l'arbre contient environ 1,8 million d'espèces. Elle est basée sur la taxonomie publiée par le <a href='https://www.ncbi.nlm.nih.gov'>NCBI</a>. Cette taxonomie est mise à jour régulièrement.</p>")
-	$("#tuto-page3").html("Tous les noeuds dans l'arbre sont cliquables. Ceci donne accès à des informations (description et photo) provenant de <i class='fa fa-wikipedia-w'></i>ikipedia. <br>Des \"trajets\" dans l'arbre peuvent être affichés en cliquant sur la flèche (<i class='fa fa-level-up'></i>) dans le coin en bas à droite et en indiquant le nom d'une espèce de départ et d'une espèce d'arrivée. Ceci permet d'identifier facilement l'ancêtre commun le plus récent (MRCA) entre deux lignées.</p>")
-	$("#tuto-page4").html("Lifemap a été écrit et est maintenu par Damien de Vienne. Les serveurs hébergeant Lifemap sont fournis par le Laboratoire de Biométrie et Biologie Évolutive. Le soutien technique concernant ces serveurs est assuré par Bruno Spataro et Stephane Delmotte.<br><br>")
-	$("#tuto-page5").html("<span xmlns:dct='http://purl.org/dc/terms/'' property='dct:title'>Lifemap</span> est sous sous licence CC-BY-NC :<br><a rel='license' href='http://creativecommons.org/licenses/by-nc/4.0/'>Creative Commons Attribution-NonCommercial 4.0 International License</a>.")
+	$("#tuto-page1").html("<p><b>Lifemap</b> est un outil interactif pour explorer l'arbre du vivant.</p><p>Le concept utilisé dans <b>Lifemap</b> est le même que dans les cartes géographiques : l'explorations se fait en zoomant.</p>");
+	$("#tuto-page2").html("<p>La version actuelle de l'arbre contient environ 1,8 million d'espèces. Elle est basée sur la taxonomie publiée et mise à jour régulièrement par le <a href='https://www.ncbi.nlm.nih.gov'>NCBI</a>.</p>")
+	$("#tuto-page3").html("<p>Tous les noeuds dans l'arbre sont cliquables. Ceci donne accès à des informations (descriptions et photos) provenant de Wikipedia.</p><p>Des \"trajets\" dans l'arbre peuvent être affichés en cliquant sur la flèche (<i class='fa fa-level-up'></i>) dans le coin inférieur droit et en indiquant le nom d'une espèce de départ et d'une espèce d'arrivée. Ceci permet d'identifier facilement l'ancêtre commun le plus récent (MRCA) entre deux espèces ou groupes d'espèces.</p>")
+	$("#tuto-page4").html("<p>Lifemap a été écrit et est maintenu par Damien de Vienne.</p><p>Les serveurs hébergeant Lifemap sont fournis par le Laboratoire de Biométrie et Biologie Évolutive (LBBE). Le soutien technique pour ces serveurs est assuré par Bruno Spataro et Stephane Delmotte.</p>")
+	$("#tuto-page5").html("")
 }
 function SwitchInterfaceToEN() {
+	//connection
+	$("#connectionerror").html(" no internet connection internet")
+	// //popup favo
+	// addedtofavopopup = "has been added to your favorites"
+	// removedfromfavopopup = "has been removed from your favorites"
 	//barres de recherche
 	$("#searchinput").attr('placeholder', 'Search species, clades, ...');
 	$("#searchinput2").attr('placeholder', 'From species, clade...');
@@ -67,6 +86,7 @@ function SwitchInterfaceToEN() {
 	$("#share").html("Share")
 	$("#flybutton").html('"Fly" to new locations')
 	$("#flytext").html('When checked, zooming to new locations after a search in the search bar will be done by a smooth animation')
+	$("#messagenofavorite").html("No favorite yet. Click <span class='label label-default'><i class='fa fa-star' style='font-size:inherit;'></i> Add to favorites</span> on the species description pages")
 	$("#favorites").html('My favorites')
 	$("#settings").html('Settings')
 	$("#langs").html('Language')
@@ -87,6 +107,11 @@ function SwitchInterfaceToEN() {
 	wikimoreon = "more on "
 	wikinoarticle = "No article concerning this group in <i class='fa fa-wikipedia-w'></i>ikipedia."
 	wikinopicture = "No associated picture on <i class='fa fa-wikipedia-w'></i>ikipedia."
+	addtofavotext = "Add to favorites"
+	isfavotext = "Favorite"
+
+	//share
+	$(".twitter-follow-button").attr("data-lang","en") //NOT WORKING
 	//button-names
 	$("#closelangchoice").html("Close")
 	$("#closemodalwikidescription").html("Close")
