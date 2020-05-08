@@ -47,10 +47,10 @@ function onBackKeyDown() {
 }
 function onOffline() {
 	//connection
-	$("#connectionerror").show()
+	$(".divconnectionerror").show()
 }
 function onOnline() {
 	//connection
-	$("#connectionerror").hide()
+	$(".divconnectionerror").hide()
 }
 
