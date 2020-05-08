@@ -7,20 +7,15 @@ CURRENT VERSION : cordova 9 and android 8
 The following tools must be installed first: 
 
 - cordova
-- cordova-icon (https://www.npmjs.com/package/cordova-icon)
-- cordova-splash (https://www.npmjs.com/package/cordova-splash)
 
 ## building the app
 To create the App for android, type:
 
 ```bash
 cordova platform add android
-cordova plugin add cordova-plugin-splash
+cordova plugin add cordova-plugin-splashscreen
 cordova plugin add cordova-plugin-whitelist
 cordova plugin add cordova-plugin-network-information
-
-cordova-icon #generate all icons
-cordova-splash #generate all splash screens
 
 cordova build #for building, or cordova run android to test on plugged phone. 
 ```
